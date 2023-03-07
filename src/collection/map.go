@@ -15,15 +15,15 @@ func MapFilter[K comparable, V any](in map[K]V, predicate func(key K, value V) b
 }
 
 // MapExistKey 断言是否存在指定的键.
-func MapExistKey[K comparable](in map[K]interface{}, key K) bool {
+func MapExistKey[K comparable, V any](in map[K]V, key K) bool {
 	_, ok := in[key]
 
 	return ok
 }
 
 // MapKeys 提取所有的键名.
-func MapKeys[K comparable](in map[K]interface{}) []K {
-	keys := make([]K, len(in))
+func MapKeys[K comparable, V any](in map[K]V) []K {
+	keys := make([]K, 0, len(in))
 
 	for key := range in {
 		keys = append(keys, key)
@@ -33,7 +33,7 @@ func MapKeys[K comparable](in map[K]interface{}) []K {
 }
 
 // MapIsContain 断言指定值是否被包含
-func MapIsContain[V comparable](in map[interface{}]V, predicate V) bool {
+func MapIsContain[K comparable, V comparable](in map[K]V, predicate V) bool {
 	for _, value := range in {
 		if value == predicate {
 			return true
