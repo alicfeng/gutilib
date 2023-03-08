@@ -32,7 +32,11 @@
 ## 🚀 快速安装
 
 ```shell
+<<<<<<< Updated upstream
 go get github.com/alicfeng/gutilib@v0.0.3
+=======
+go get github.com/alicfeng/gutilib@v0.0.4
+>>>>>>> Stashed changes
 ```
 
 
@@ -44,8 +48,6 @@ go get github.com/alicfeng/gutilib@v0.0.3
 三元表达式
 
 ```go
-import "github.com/alicfeng/gutilib/expression"
-  
 // 支持任意类型的值类型
 what := expression.Ternary(true, "hello", "hi") // what:hello
 ```
@@ -59,8 +61,6 @@ what := expression.Ternary(true, "hello", "hi") // what:hello
 `map` 过滤
 
 ```go
-import "github.com/alicfeng/gutilib/collection"
-
 // 定义我的成绩 Map
 data := map[string]int64{
   "math":    88,
@@ -77,8 +77,6 @@ result := collection.MapFilter(data, func(key string, value int64) bool {
 `map` 断言是否存在指定的键
 
 ```go
-import "github.com/alicfeng/gutilib/src/collection"
-
 // 定义我的成绩 Map
 data := map[string]int64{
   "math":    88,
@@ -92,8 +90,6 @@ result := collection.MapExistKey(data, "math") // result : true
 `map` 提取所有的键名
 
 ```go
-import "github.com/alicfeng/gutilib/collection"
-
 // 定义我的成绩 Map
 data := map[string]int64{
   "math":    88,
@@ -104,11 +100,37 @@ data := map[string]int64{
 result := collection.MapKeys(data) // result : []string{"math","english","chinese"}
 ```
 
+`map`获取所有的值
+
+```go
+// 定义我的成绩 Map
+data := map[string]int64{
+  "math":    88,
+  "english": 90,
+  "chinese": 60,
+}
+
+result := collection.MapValues(data) // result : []int64{88,90,60}
+```
+
+`map` 遍历
+
+```go
+// 定义我的成绩 Map
+data := map[string]int64{
+  "math":    88,
+  "english": 90,
+  "chinese": 60,
+}
+
+collection.MapForEach(data, func(key string,value int64){
+  fmt.Print(key, value)
+})
+```
+
 `map` 断言指定值是否被包含
 
 ```go
-import "github.com/alicfeng/gutilib/collection"
-
 // 定义我的成绩 Map
 data := map[string]int64{
   "math":    88,
@@ -126,11 +148,7 @@ result := collection.MapIsContain(data, 100) // result : false
 切片过滤
 
 ```go
-import "github.com/alicfeng/gutilib/collection"
-
-data := []int64{1, 2, 3}
-
-result := collection.SliceFilter(data, func(index int, item int64) bool {
+result := collection.SliceFilter([]int64{1, 2, 3}, func(index int, item int64) bool {
     return item == 2
 })// result : [2]
 ```
@@ -138,10 +156,6 @@ result := collection.SliceFilter(data, func(index int, item int64) bool {
 切片截取
 
 ```go
-import "github.com/alicfeng/gutilib/collection"
-
-data := []int64{1, 2, 3}
-
-result := collection.SliceSub(data, 0, 1) // result : [1, 2]
+result := collection.SliceSub([]int64{1, 2, 3}, 0, 1) // result : [1, 2]
 ```
 

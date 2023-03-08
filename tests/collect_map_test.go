@@ -5,14 +5,16 @@ import (
 	"testing"
 )
 
-func TestCollectionMapFilter(t *testing.T) {
-	data := map[string]int64{
+func mockMapData() map[string]int64 {
+	return map[string]int64{
 		"math":    88,
 		"english": 90,
 		"chinese": 60,
 	}
+}
 
-	result := collection.MapFilter(data, func(key string, value int64) bool {
+func TestCollectionMapFilter(t *testing.T) {
+	result := collection.MapFilter(mockMapData(), func(key string, value int64) bool {
 		return value > 80
 	})
 	if 2 != len(result) {
@@ -21,38 +23,27 @@ func TestCollectionMapFilter(t *testing.T) {
 }
 
 func TestCollectionMapKeys(t *testing.T) {
-	data := map[string]int64{
-		"math":    88,
-		"english": 90,
-		"chinese": 60,
+	result := collection.MapKeys(mockMapData())
+	if 3 != len(result) {
+		t.Fail()
 	}
+}
 
-	result := collection.MapKeys(data)
+func TestCollectionMapValues(t *testing.T) {
+	result := collection.MapKeys(mockMapData())
 	if 3 != len(result) {
 		t.Fail()
 	}
 }
 
 func TestCollectionMapIsContain(t *testing.T) {
-	data := map[string]int64{
-		"math":    88,
-		"english": 90,
-		"chinese": 60,
-	}
-
-	if collection.MapIsContain(data, 99) {
+	if collection.MapIsContain(mockMapData(), 99) {
 		t.Fail()
 	}
 }
 
 func TestCollectionMapExistKey(t *testing.T) {
-	data := map[string]int64{
-		"math":    88,
-		"english": 90,
-		"chinese": 60,
-	}
-
-	if false == collection.MapExistKey(data, "math") {
+	if false == collection.MapExistKey(mockMapData(), "math") {
 		t.Fail()
 	}
 }
