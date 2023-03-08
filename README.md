@@ -25,7 +25,7 @@
 
 - [x]  集合常规场景函数
 
-- [ ] 文件类增强化函数
+- [x] 文件类增强化函数
 
 
 
@@ -33,10 +33,7 @@
 
 ```shell
 <<<<<<< Updated upstream
-go get github.com/alicfeng/gutilib@v0.0.3
-=======
 go get github.com/alicfeng/gutilib@v0.0.4
->>>>>>> Stashed changes
 ```
 
 
@@ -159,3 +156,11 @@ result := collection.SliceFilter([]int64{1, 2, 3}, func(index int, item int64) b
 result := collection.SliceSub([]int64{1, 2, 3}, 0, 1) // result : [1, 2]
 ```
 
+
+#### 文件系统
+
+判断路径是否存在
+
+```go
+var ok bool = filesystem.PathExist("/usr/local/ai/model.pb")
+```
