@@ -32,7 +32,6 @@
 ## 🚀 快速安装
 
 ```shell
-<<<<<<< Updated upstream
 go get github.com/alicfeng/gutilib@v0.0.4
 ```
 
