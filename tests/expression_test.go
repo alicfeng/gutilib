@@ -1,7 +1,7 @@
 package tests_test
 
 import (
-	"github.com/alicfeng/gutilib/src/expression"
+	"github.com/alicfeng/gutilib/expression"
 	"testing"
 	_ "testing"
 )

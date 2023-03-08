@@ -1,6 +1,6 @@
 <div align="center">
     <h1>
-        <a href="https://devops.coding.smoa.cloud/p/smore-vimo/d/vimo-aiaas/git">
+        <a href="https://github.com/alicfeng/gutilib">
             Golang Library On Lampstand
         </a>
     </h1>

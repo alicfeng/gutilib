@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"github.com/alicfeng/gutilib/src/collection"
+	"github.com/alicfeng/gutilib/collection"
 	"testing"
 )
 
